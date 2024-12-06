@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Taller Casther</title>
-    <style>
+    <title>Gestión de Empleados</title>
+     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -83,14 +82,59 @@
                 <li><a href="/reports">Informes</a></li>
             </ul>
         </nav>
+        
+        <!-- Contenido principal -->
         <main class="main-content">
-            <h1>Bienvenido a Buses Caster</h1>
-            <section class="summary">
-                <h2>Resumen - Trabajos Pendientes</h2>
-                <div class="content-box">
-                    <!-- Aquí puedes incluir una tabla o lista -->
-                </div>
-            </section>
+            <header>
+                <h1>Empleados</h1>
+            </header>
+            <div class="actions">
+                <button class="btn" onclick="">Ingresar Empleado</button>
+                <button class="btn" onclick="">Actualizar Empleado</button>
+                <button class="btn" onclick="">Eliminar Empleado</button>
+            </div>
+            <table class="table-striped">
+                <thead>
+                  <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Cargo</th>
+                    <th>Fecha de Nacimiento</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Juan</td>
+                    <td>García</td>
+                    <td>Secretario</td>
+                    <td>15/03/1985</td>
+                  </tr>
+                  <tr>
+                    <td>María</td>
+                    <td>López</td>
+                    <td>Mecánico Ingeniero</td>
+                    <td>22/07/1990</td>
+                  </tr>
+                  <tr>
+                    <td>Carlos</td>
+                    <td>Martínez</td>
+                    <td>Mecánico Ingeniero</td>
+                    <td>30/11/1982</td>
+                  </tr>
+                  <tr>
+                    <td>Ana</td>
+                    <td>Rodríguez</td>
+                    <td>Mecánico Ingeniero</td>
+                    <td>18/05/1988</td>
+                  </tr>
+                  <tr>
+                    <td>Pedro</td>
+                    <td>Sánchez</td>
+                    <td>Encargado</td>
+                    <td>25/09/1992</td>
+                  </tr>
+                </tbody>
+              </table>
         </main>
     </div>
 </body>

@@ -1,24 +1,17 @@
-"""
-URL configuration for appbuses project.
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/5.1/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
-from django.contrib import admin
-from django.urls import path
-from casther.views import index_view
+from django.contrib import admin # type: ignore
+from django.urls import path # type: ignore
+from casther import views
 
 urlpatterns = [
-    path('', index_view),
+    #vistas base
+    path('', views.login_view),
+    path('index/', views.index_view),
+    path('password/', views.password_view),
     path('admin/', admin.site.urls),
+
+    #vistas funcionales
+    path('employees/', views.employees_view),
+    path('inventory/', views.inventory_view),
+    path('works/', views.works_view),
+    path('reports/', views.reports_view),
 ]

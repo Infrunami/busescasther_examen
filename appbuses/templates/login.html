@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f1a641; /* Color naranja de fondo */
+        }
+        
+        .login-container {
+            width: 360px;
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+        }
+        
+        .logo-container {
+            background-color: #f1a641; /* Fondo del logo */
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto -50px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .logo {
+            width: 80px;
+            height: auto;
+        }
+        
+        .login-form {
+            padding-top: 50px;
+        }
+        
+        .input-field {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .login-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #e6ff00; /* Color amarillo del botón */
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            color: black;
+            margin-top: 10px;
+        }
+        
+        .fingerprint-icon {
+            margin: 10px auto;
+            width: 50px;
+            height: 50px;
+            background-image: url('fingerprint.png'); /* Imagen de huella digital */
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .forgot-password {
+            display: block;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo" class="logo">
+        </div>
+        <form class="login-form">
+            <input type="email" placeholder="Correo" class="input-field">
+            <input type="password" placeholder="Contraseña" class="input-field">
+            <a href="/index" class="login-button">INICIAR SESIÓN</a>
+            <div class="fingerprint-icon"></div>
+            <a href="/password" class="forgot-password">Olvide mi Contraseña</a>
+        </form>
+    </div>
+</body>
+</html>
