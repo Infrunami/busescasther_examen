@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Ingresar Vehículo - AppBuses{% endblock %}
+
+{% block content %}
+<div class="container mx-auto px-4">
+    <h1 class="text-3xl font-bold mb-6">Ingresar Vehículo</h1>
+    <form method="post" class="max-w-lg mx-auto">
+        {% csrf_token %}
+        <div class="mb-4">
+            <label for="modelo" class="block text-gray-700 text-sm font-bold mb-2">Modelo:</label>
+            <input type="text" name="modelo" id="modelo" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+            <label for="año" class="block text-gray-700 text-sm font-bold mb-2">Año:</label>
+            <input type="number" name="año" id="año" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+            <label for="patente" class="block text-gray-700 text-sm font-bold mb-2">Patente:</label>
+            <input type="text" name="patente" id="patente" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+            <label for="problema" class="block text-gray-700 text-sm font-bold mb-2">Problema:</label>
+            <textarea name="problema" id="problema" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" rows="4"></textarea>
+        </div>
+        <div class="flex items-center justify-between">
+            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                Ingresar Vehículo
+            </button>
+            <a href="{% url 'trabajos' %}" class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">
+                Cancelar
+            </a>
+        </div>
+    </form>
+</div>
+{% endblock %}

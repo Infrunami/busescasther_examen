@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Inicio - AppBuses{% endblock %}
+
+{% block content %}
+<div class="container mx-auto px-4">
+    <h1 class="text-3xl font-bold mb-6">Bienvenido a AppBuses</h1>
+    <p class="mb-4">Sistema de gestión para la empresa mecánica de mantenimiento de buses.</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <a href="{% url 'empleados' %}" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+            <h2 class="text-xl font-semibold mb-2">Empleados</h2>
+            <p>Gestionar información de empleados</p>
+        </a>
+        <a href="{% url 'inventario' %}" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+            <h2 class="text-xl font-semibold mb-2">Inventario</h2>
+            <p>Administrar productos y stock</p>
+        </a>
+        <a href="{% url 'trabajos' %}" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+            <h2 class="text-xl font-semibold mb-2">Trabajos</h2>
+            <p>Gestionar vehículos y reparaciones</p>
+        </a>
+        <a href="{% url 'informes' %}" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+            <h2 class="text-xl font-semibold mb-2">Informes</h2>
+            <p>Ver y generar informes de trabajos</p>
+        </a>
+    </div>
+</div>
+{% endblock %}

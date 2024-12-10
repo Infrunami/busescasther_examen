@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Generar Informe - AppBuses{% endblock %}
+
+{% block content %}
+<div class="container mx-auto px-4">
+    <h1 class="text-3xl font-bold mb-6">Generar Informe</h1>
+    <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <h2 class="text-xl font-bold mb-4">Detalles del Vehículo</h2>
+        <p><strong>Modelo:</strong> {{ vehiculo.modelo }}</p>
+        <p><strong>Año:</strong> {{ vehiculo.año }}</p>
+        <p><strong>Patente:</strong> {{ vehiculo.patente }}</p>
+        <p><strong>Problema reportado:</strong> {{ vehiculo.problema }}</p>
+    </div>
+    <form method="post" class="max-w-lg mx-auto">
+        {% csrf_token %}
+        <div class="mb-4">
+            <label for="diagnostico" class="block text-gray-700 text-sm font-bold mb-2">Diagnóstico:</label>
+            <textarea name="diagnostico" id="diagnostico" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" rows="4"></textarea>
+        </div>
+        <div class="mb-4">
+            <label for="reparacion" class="block text-gray-700 text-sm font-bold mb-2">Reparación Realizada:</label>
+            <textarea name="reparacion" id="reparacion" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" rows="4"></textarea>
+        </div>
+        <div class="mb-4">
+            <label for="comentarios" class="block text-gray-700 text-sm font-bold mb-2">Comentarios Adicionales:</label>
+            <textarea name="comentarios" id="comentarios" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" rows="4"></textarea>
+        </div>
+        <div class="flex items-center justify-between">
+            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                Generar Informe
+            </button>
+            <a href="{% url 'trabajos' %}" class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">
+                Cancelar
+            </a>
+        </div>
+    </form>
+</div>
+{% endblock %}

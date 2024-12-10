@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Visualizar Informe - AppBuses{% endblock %}
+
+{% block content %}
+<div class="container mx-auto px-4">
+    <h1 class="text-3xl font-bold mb-6">Visualizar Informe</h1>
+    <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <h2 class="text-xl font-bold mb-4">Detalles del Vehículo</h2>
+        <p><strong>Modelo:</strong> {{ informe.vehiculo.modelo }}</p>
+        <p><strong>Año:</strong> {{ informe.vehiculo.año }}</p>
+        <p><strong>Patente:</strong> {{ informe.vehiculo.patente }}</p>
+        <p><strong>Problema reportado:</strong> {{ informe.vehiculo.problema }}</p>
+    </div>
+    <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <h2 class="text-xl font-bold mb-4">Informe</h2>
+        <p><strong>Fecha de creación:</strong> {{ informe.fecha_creacion|date:"d/m/Y H:i" }}</p>
+        <h3 class="text-lg font-bold mt-4 mb-2">Diagnóstico:</h3>
+        <p>{{ informe.diagnostico }}</p>
+        <h3 class="text-lg font-bold mt-4 mb-2">Reparación Realizada:</h3>
+        <p>{{ informe.reparacion }}</p>
+        {% if informe.comentarios %}
+        <h3 class="text-lg font-bold mt-4 mb-2">Comentarios Adicionales:</h3>
+        <p>{{ informe.comentarios }}</p>
+        {% endif %}
+    </div>
+    <div class="mt-4">
+        <a href="{% url 'informes' %}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+            Volver a Informes
+        </a>
+    </div>
+</div>
+{% endblock %}

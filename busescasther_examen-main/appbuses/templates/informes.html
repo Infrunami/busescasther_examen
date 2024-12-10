@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-6">Informes</h1>
+
+    <!-- Formulario de búsqueda -->
+    <div class="mb-6">
+        <form method="GET" action="{% url 'informes' %}" class="flex gap-2">
+            <input 
+                type="text" 
+                name="q" 
+                value="{{ query }}"
+                placeholder="Buscar por patente o modelo..." 
+                class="flex-grow p-2 border rounded"
+            >
+            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                Buscar
+            </button>
+        </form>
+    </div>
+
+    <!-- Tabla de informes -->
+    <div class="overflow-x-auto">
+        <table class="w-full border-collapse border border-gray-300">
+            <thead>
+                <tr class="bg-gray-100">
+                    <th class="border border-gray-300 px-4 py-2 text-left">VEHÍCULO</th>
+                    <th class="border border-gray-300 px-4 py-2 text-left">FECHA</th>
+                    <th class="border border-gray-300 px-4 py-2 text-left">ACCIONES</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for informe in informes %}
+                <tr class="{% cycle 'bg-white' 'bg-gray-50' %}">
+                    <td class="border border-gray-300 px-4 py-2">{{ informe.vehiculo }}</td>
+                    <td class="border border-gray-300 px-4 py-2">{{ informe.fecha|date:"d/m/Y H:i" }}</td>
+                    <td class="border border-gray-300 px-4 py-2">
+                        <a href="{% url 'visualizar_informe' informe.id %}" class="text-blue-600 hover:text-blue-800">
+                            Ver Informe
+                        </a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="3" class="border border-gray-300 px-4 py-4 text-center">
+                        No se encontraron informes
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
